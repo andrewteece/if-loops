@@ -7,8 +7,10 @@ $colors: (primary, #4287f5), (secondary, #3a128a), (accent, #f59c42);
     background: $color;
     @debug color.lightness($color);
 
-    @if (color.lightness($color) > 50%) {
+    @if (color.lightness($color) < 50%) {
       color: white;
+    } @else {
+      color: black;
     }
   }
 }
