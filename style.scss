@@ -1,0 +1,14 @@
+@use 'sass:color';
+
+$colors: (primary, #4287f5), (secondary, #3a128a), (accent, #f59c42);
+
+@each $name, $color in $colors {
+  .clr-#{$name} {
+    background: $color;
+    @debug color.lightness($color);
+
+    @if (color.lightness($color) < 50%) {
+      color: white;
+    }
+  }
+}
